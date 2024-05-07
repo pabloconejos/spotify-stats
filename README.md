@@ -42,6 +42,7 @@ $ npm install
 
 # Get spotify keys
 $ complete the envioraments with yours keys
+$ call the environment in callback.component on the lines 39, 40, 41
 
 # Run the app
 $ ng serve
