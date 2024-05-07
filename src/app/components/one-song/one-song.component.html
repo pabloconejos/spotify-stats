@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row row-cols-3 row-cols-sm-3 row-cols-md-4 row-cols-lg-4">
+      <img class="img" [src]="song.album.images[0].url" alt="Album Image">
+      <div>{{song.name}}</div>
+      <div>{{song.duration_ms}} ms</div>
+      <div>{{song.popularity}} sobre 100</div>
+      <div>Album: {{song.album.name}}</div>
+      <div>{{getArtistsNames(song.album.artists)}}</div>
+      <div>{{song.name}}</div>
+    </div>
+  </div>
+</div>

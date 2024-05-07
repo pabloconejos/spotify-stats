@@ -1,0 +1,304 @@
+.contenedor {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(120px, 1fr);
+  gap: 10px;
+  padding: 10px 0 10px 0;
+
+  font-family: system-ui, -apple-system;
+}
+
+.contenedor article{
+  color: #1DB954;
+  border-radius: 0.5em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  background-color: #1e1e1e;
+
+}
+
+/*section{
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 20%;
+}*/
+
+.header{
+  grid-column: 1 / -1;
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 0;
+  color: #ffffff;
+  align-items: center;
+
+}
+
+.header h2{
+  font-size: 20px;
+}
+
+.foto-perfil{
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+
+.listas .targetas-img{
+  border-radius: 0.5em 0.5em 0  0;
+  width: 100%;
+}
+
+.card-title{
+  font-weight: bold;
+}
+
+.top .targetas-img{
+  border-radius: 0.5em 0.5em 0  0;
+  width: 100%;
+}
+
+.recomendadas .targetas-img{
+  max-width: 100%;
+  border-radius: 0.5em 0 0 .5em;
+}
+.stats{
+
+}
+recomendadas{
+
+}
+
+.stats .targetas-img{
+  max-width: 100%;
+  border-radius: 0.5em 0 0 .5em;
+}
+
+.card-body{
+
+}
+
+.listas:hover{
+  cursor: pointer;
+  .card-body{
+    color: white;
+  }
+}
+
+.top:hover{
+  cursor: pointer;
+  .card-body{
+    color: white;
+  }
+}
+
+.stats:hover{
+  .card-body{
+    color: white;
+  }
+}
+
+.recomendadas:hover{
+  .card-body{
+    color: white;
+  }
+}
+.stats, .recomendadas{
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+
+}
+
+
+
+svg{
+  border-radius: 0.5em;
+}
+
+
+.playlist {
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+
+}
+
+.playlist-header {
+  border-radius: 50%;
+  margin-right: 15px;
+  display: flex;
+}
+
+.playlist-cover {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.playlist-info {
+  flex: 1;
+}
+
+.playlist-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.playlist-owner {
+  font-size: 12px;
+  color: #b3b3b3;
+}
+
+.track-list {
+  border-top: 1px solid #333333;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+
+
+.track {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  transition: background-color 0.2s;
+  border-radius: 4px;
+}
+
+.track:hover{
+  cursor: pointer;
+  background-color: #666666;
+  border-radius: 4px;
+
+}
+
+.track-index {
+  width: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #b3b3b3;
+  margin-right: 10px;
+
+}
+
+.track-details {
+  flex: 1;
+  min-width: 0; /* Permite que el contenido se corte con ellipsis si es necesario */
+
+}
+
+.track-title {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+}
+
+.track-artist {
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+}
+
+.track-duration {
+  font-size: 14px;
+
+}
+
+.spotify-link svg{
+  width: 20px;
+  height: auto;
+  margin-right: 20px;
+
+}
+
+.spotify-link svg:hover{
+  color: #1DB954;
+}
+
+
+
+@media (max-width: 992px) {
+
+  .recomendadas .targetas-img{
+    width: 100%;
+    border-radius: 0.5em 0.5em 0  0;
+  }
+
+  .stats .targetas-img{
+    width: 100%;
+    border-radius: 0.5em 0.5em 0  0;
+
+  }
+
+}
+
+
+
+/* Media Query para pantallas más grandes */
+@media (min-width: 992px) {
+
+  svg{
+    padding: 10px;
+    border-radius: 5%;
+    width: 400px;
+    height: 400px;
+  }
+
+  .spotify-link svg{
+    width: 40px;
+    height: auto;
+    margin-right: 20px;
+
+  }
+
+}
+
+.encabezado-not {
+  color: white;
+
+}
+
+.encabezado-not .titulo-not{
+  color: #1DB954;
+  font-size: 5vh;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.info-not{
+  font-size: 35px;
+  margin: 10px
+}
+
+.encabezado-not ul{
+  font-size: 30px;
+}
+
+.lista-not{
+  color: white;
+  font-size: 25px;
+}
+
+.lista-not h3{
+  font-size: 40px;
+  color: #1DB954;
+  font-weight: bold;
+}
+
+ul{
+  list-style: none;
+}

@@ -1,0 +1,211 @@
+<div *ngIf="!notInDashboard" > <!-- *ngIf="!notInDashboard" -->
+  <div *ngIf="loaded" class="container">
+
+    <main class="contenedor">
+      <article class="header">
+        <img class="foto-perfil" [src]="img_User"  alt="Foto de perfil del usuario">
+        <div>
+          <h2 title="@{{user.display_name}}" >@{{user.display_name}}</h2>
+          <span class="playlist-owner">Seguidores · {{user.followers.total}}</span>
+        </div>
+      </article>
+      <article (click)="routeador('/playList')" class="listas">
+          <img [src]="img_PlayList" class="targetas-img" >
+          <div class="card-body">
+            <h5 class="card-title">Playlist</h5>
+            <p class="card-text">Explore your playlists</p>
+          </div>
+      </article>
+      <article (click)="routeador('/tracks4semanas')" class="top">
+          <img [src]="img_Top"  class="targetas-img" >
+          <div class="card-body">
+            <h5 class="card-title">Top</h5>
+            <p class="card-text">Check all your Tops</p>
+          </div>
+      </article>
+      <article (click)="routeador('/estadisticas')" class="stats">
+          <img src="../../assets/foto_stats.png" class="targetas-img" >
+          <div class="card-body">
+            <h5 class="card-title">Statistics</h5>
+          </div>
+      </article>
+      <article routerLink="/newplaylist" class="recomendadas">
+          <img src="../../assets/foto_new_music.png" class="targetas-img" >
+          <div class="card-body">
+            <h5 class="card-title">New Music</h5>
+          </div>
+      </article>
+    </main>
+
+    <section class="playlist">
+      <header class="playlist-header">
+        <img class="foto-perfil" [src]="img_User" alt="Foto de perfil del usuario">
+        <div class="playlist-info">
+          <div class="playlist-title">Recently Listened</div>
+          <div title="@{{user.display_name}}" class="playlist-owner">@{{user.display_name}}</div>
+        </div>
+      </header>
+      <div class="track-list">
+        <article class="track" (click)="openSptify(track.track.external_urls.spotify)" *ngFor="let track of tracks; let i = index">
+          <span class="track-index">{{(i+1)}}</span>
+          <div class="track-details">
+            <h2 [title]="track.track.name" class="track-title">{{track.track.name}}</h2>
+            <p [title]="getArtistsNames(track.track.artists)" class="track-artist">{{getArtistsNames(track.track.artists)}}</p>
+          </div>
+          <div title="Abrir en Spotify" class="spotify-link">
+            <svg  href="" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+            </svg>
+          </div>
+          <time class="track-duration">{{getSeconds(track.track.duration_ms)}}</time>
+
+        </article>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SKELETON *ngIf="!loaded"-->
+  <div class="container" *ngIf="!loaded">
+
+    <div class="contenedor">
+
+      <section class="header">
+        <svg class="bd-placeholder-img playlist-cover"
+             xmlns="http://www.w3.org/2000/svg" role="img"
+             aria-label="Placeholder" preserveAspectRatio="xMidYMid slice"
+             focusable="false"><title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#868e96"></rect></svg>
+
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+          </p>
+        </div>
+      </section>
+
+      <section class="listas">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
+             xmlns="http://www.w3.org/2000/svg" role="img"
+             aria-label="Placeholder" preserveAspectRatio="xMidYMid slice"
+             focusable="false"><title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#868e96"></rect></svg>
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+          </p>
+        </div>
+      </section>
+
+      <section class="top">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
+             xmlns="http://www.w3.org/2000/svg" role="img"
+             aria-label="Placeholder" preserveAspectRatio="xMidYMid slice"
+             focusable="false"><title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#868e96"></rect></svg>
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+          </p>
+        </div>
+      </section>
+
+      <section class="stats">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
+             xmlns="http://www.w3.org/2000/svg" role="img"
+             aria-label="Placeholder" preserveAspectRatio="xMidYMid slice"
+             focusable="false"><title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#868e96"></rect></svg>
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+          </p>
+        </div>
+      </section>
+
+      <section class="recomendadas">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
+             xmlns="http://www.w3.org/2000/svg" role="img"
+             aria-label="Placeholder" preserveAspectRatio="xMidYMid slice"
+             focusable="false"><title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#868e96"></rect></svg>
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="playlist">
+      <div class="playlist-header">
+        <svg class="bd-placeholder-img playlist-cover"
+             xmlns="http://www.w3.org/2000/svg" role="img"
+             aria-label="Placeholder" preserveAspectRatio="xMidYMid slice"
+             focusable="false"><title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#868e96"></rect></svg>
+        <div class="playlist-info">
+          <p aria-hidden="true">
+            <span class="placeholder col-6"></span>
+          </p>
+          <p aria-hidden="true">
+            <span class="placeholder col-3"></span>
+          </p>
+        </div>
+      </div>
+      <div class="track-list">
+        <div class="track" *ngFor="let track of [1,1,1,1]; let i = index">
+          <div class="track-index">{{(i+1)}}</div>
+          <div class="track-details">
+            <p aria-hidden="true">
+              <span class="placeholder col-6"></span>
+            </p>
+            <p aria-hidden="true">
+              <span class="placeholder col-3"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div style="min-height: 700px" *ngIf="notInDashboard && loaded" class="container-fluid"><!--*ngIf="notInDashboard"-->
+  <header class="encabezado-not">
+    <h2 class="titulo-not">MUSIC NUMBERS</h2>
+    <p class="info-not">Aun estoy esperando a la cuota extendida de usuarios de spotify. Pideme acceso para añadirte a la lista de developers</p>
+  </header>
+
+  <main class="lista-not">
+    <h3>Contactame</h3>
+    <ul >
+      <li><a style=" color: white" href="https://www.instagram.com/alivezk_/">alivezk_</a></li>
+      <li><a style=" color: white" href="https://twitter.com/konezk_">@konezk_</a></li>
+      <li><a style=" color: white" href="mailto:pconejos03@gmail.com?Subject=Cuota%20extendida">pconejos03@gmail.com</a></li>
+    </ul>
+  </main>
+</div>
+

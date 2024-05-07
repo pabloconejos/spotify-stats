@@ -1,0 +1,19 @@
+<app-navbar-general></app-navbar-general>
+<main class="container-fluid">
+  <section class="container">
+    <h3 class="titulo">Most listened to music genres</h3>
+    <ul class="generos-lista">
+      <li class="genero-item" *ngFor="let genero of resultadoArray; let i = index">
+        <span class="genero-barra" [style.width]="calcularAncho(genero.veces)"></span>
+        <div class="genero-info">
+          <h3 class="genero-nombre">{{ genero.genero }}</h3>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+
+
+

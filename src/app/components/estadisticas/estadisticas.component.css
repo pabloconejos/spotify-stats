@@ -1,0 +1,51 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.titulo {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.generos-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.genero-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.genero-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.genero-nombre {
+  font-weight: bold;
+  color: white;
+}
+
+.genero-cantidad {
+  color: #777;
+}
+
+.genero-barra {
+  height: 10px;
+  background-color: #1DB954;
+  border-radius: 3px;
+}
+
+@media (max-width: 600px) {
+  .genero-nombre {
+    font-size: 14px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+  }
+}

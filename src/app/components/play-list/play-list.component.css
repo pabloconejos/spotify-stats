@@ -1,0 +1,180 @@
+.container-fluid {
+  padding: 10px;
+  background-color: #0E0D0D;
+  color: #1DB954;
+}
+
+.card{
+  margin: 5px;
+  border-radius: 4%;
+  background-color: #4B4B4B;
+}
+
+.card:hover{
+  cursor: pointer;
+  color: white;
+}
+
+img{
+  padding: 10px;
+  border-radius: 10%;
+}
+
+.img_circle{
+  border-radius: 50%;
+}
+
+.playlist {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.playlist-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.playlist-cover {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.album-cover{
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+}
+
+.playlist-info {
+  flex: 1;
+}
+
+.playlist-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.playlist-owner {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.track-list {
+  border-top: 1px solid #333333;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+
+  transition: background-color 0.2s;
+}
+
+.track:hover{
+  cursor: pointer;
+  background-color: #666666;
+  border-radius: 4px;
+
+}
+
+.track-index {
+  width: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #b3b3b3;
+  margin-right: 10px;
+}
+
+.track-details {
+  flex: 1;
+  min-width: 0; /* Permite que el contenido se corte con ellipsis si es necesario */
+}
+
+.track-title {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+}
+
+.track-artist {
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+}
+
+.track-duration {
+  font-size: 14px;
+}
+
+.image-row {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+.image-scrollable {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
+.image-scrollable img {
+  max-width: 100%;
+  margin-right: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+}
+
+.image-scrollable img:hover{
+  cursor: pointer;
+}
+
+.selected {
+  border: 2px solid #1DB954;
+}
+
+
+
+.container{
+  min-height: 800px;
+}
+
+
+.spotify-link svg{
+  width: 20px;
+  height: auto;
+  margin-right: 20px;
+
+}
+
+.spotify-link svg:hover{
+  color: #1DB954;
+}
+
+

@@ -1,0 +1,45 @@
+
+<app-navbar-general></app-navbar-general>
+<div  class="container-fluid">
+  <div class="container">
+
+
+    <header class="image-row">
+      <div class="image-scrollable">
+        <img *ngFor="let lista of lista_playList.items"
+             class="image-item"
+             [src]="lista.images[0].url"
+             [ngClass]="{'selected': lista.id === selectedPlaylist}"
+             (click)="getPlayList(lista.id)">
+      </div>
+    </header>
+
+    <section *ngIf="load" class="playlist">
+      <header class="playlist-header">
+        <img class="playlist-cover" [src]="playList.images[0].url"  alt="Playlist Cover">
+        <div class="playlist-info">
+          <div class="playlist-title">{{playList.name}}</div>
+          <div class="playlist-owner">@{{this.id_user}}</div>
+        </div>
+      </header>
+      <div *ngFor="let track of playList.tracks.items let i = index" class="track-list">
+        <article *ngIf="track.track.album" class="track" (click)="openSptify(track.track.external_urls.spotify)">
+          <span class="track-index">{{(i+1)}}</span>
+          <img class="album-cover" [src]="track.track.album.images[0].url"  alt="Playlist Cover">
+          <div class="track-details">
+            <div title="{{track.track.name}}" class="track-title">{{track.track.name}}</div>
+            <div title="{{getArtistsNames(track.track.artists)}}" class="track-artist">{{getArtistsNames(track.track.artists)}}</div>
+          </div>
+          <div title="Abrir en Spotify" class="spotify-link">
+            <svg  href="" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+            </svg>
+          </div>
+          <time class="track-duration">{{getSeconds(track.track.duration_ms)}}</time>
+        </article>
+      </div>
+    </section>
+  </div>
+</div>
+
+

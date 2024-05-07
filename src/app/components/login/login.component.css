@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.contenedor{
+  height: 100vh;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+
+  z-index: 2;
+}
+
+section{
+  border: solid 0.5px #262626;
+  color: white;
+  border-radius: 10px;
+  background: #0E0D0D;
+  overflow: hidden;
+}
+
+.info{
+  grid-column: 1 / 4;
+  grid-row: 1 / 3;
+
+  padding: 40px;
+
+}
+
+.foto1{
+  grid-column: span 2;
+  transition: transform .5s;
+
+}
+
+.foto2{
+  grid-column: span 2;
+  transition: transform .5s;
+
+
+}
+
+
+.login{
+  grid-column: span 4;
+
+  display: grid;
+  grid-template-columns: 1fr  ;
+  gap: 10px;
+  padding: 10px;
+}
+
+
+section img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.encabezado{
+}
+
+.encabezado .titulo{
+  color: #1DB954;
+  font-size: 6vh;
+}
+
+
+.lista{
+}
+
+.fila{
+  padding-top: 20px;
+}
+
+.fila:last-child{
+  padding-bottom: 20px;
+
+}
+
+.titulo{
+  font-weight: bold;
+  font-family: system-ui, -apple-system;
+  margin-bottom: 5px;
+
+  font-size: 4vh;
+  display: flex;
+}
+
+.contenido{
+  font-size: 2.5vh;
+}
+
+.login div{
+}
+
+.tres-texto ul{
+  font-weight: bold;
+}
+
+.tres-texto ul li{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.login{
+  background: #1DB954;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  border-radius: 10px;
+  transition: transform .5s;
+}
+
+.login .titulo{
+  font-size: 100px
+}
+
+.login:hover{
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.foto1:hover{
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.foto2:hover{
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+@media (max-width: 1125px) {
+
+  .encabezado .titulo{
+    font-size: 5vh;
+  }
+
+  .titulo{
+    font-size: 3.5vh;
+  }
+
+  .contenido{
+    font-size: 2.2vh;
+  }
+
+}
+
+
+
+@media (max-width: 992px) {
+
+  .contenedor{
+    /*height: 100vh;*/
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+
+    z-index: 2;
+  }
+
+  .info{
+    grid-column: 1 / -1;
+    grid-row: 1 / 3;
+
+  }
+
+  .foto1{
+    grid-column: span 2;
+  }
+
+  .foto2{
+    grid-column: span 2;
+
+  }
+
+
+  .login{
+    grid-column: 1 / -1;
+    grid-row: 3 / 4
+  }
+
+
+  .encabezado .titulo{
+    font-size: 3vh;
+  }
+
+  .titulo{
+    font-size: 3vh;
+  }
+
+  .contenido{
+    font-size: 1.5vh;
+  }
+
+  .encabezado p{
+    font-size: 1.5vh;
+  }
+
+  .login .titulo{
+    font-size: 60px
+  }
+}

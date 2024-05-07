@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="favicon.ico" alt="" width="30" height="24">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/home">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarCanciones" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Songs
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/tracks4semanas" >4 weeks</a></li>
+            <li><a class="dropdown-item" href="/tracks6meses" >6 months</a></li>
+            <li><a class="dropdown-item" href="/tracksdeporvida" >all time</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarArtistas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Artist
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/artist4semanas" >4 weeks</a></li>
+            <li><a class="dropdown-item" href="/artist6meses" >6 months</a></li>
+            <li><a class="dropdown-item" href="/artistdeporvida" >all time</a></li>
+          </ul>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/playList">PlayList</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/estadisticas">Statistics</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/newplaylist">Generate new PlayList</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" (click)="log_out()" >Log Out</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+

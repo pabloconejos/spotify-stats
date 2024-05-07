@@ -1,0 +1,13 @@
+<app-navbar-general></app-navbar-general>
+<main class="container-fluid">
+  <section *ngIf="loaded" class="container">
+    <iframe class="custom-iframe" [src]="playlistUrl" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </section>
+  <div style="height: 80vh; display: flex; justify-content: center; align-items: center" *ngIf="!loaded">
+    <div style="width: 100px; height: 100px" class="spinner-border text-success" role="status">
+      <span class="sr-only"></span>
+    </div>
+  </div>
+</main>
+
+
