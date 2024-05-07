@@ -35,9 +35,9 @@ export class CallbackComponent implements OnInit {
   }
 
   exchangeAuthorizationCode(authorizationCode: string): Promise<string> {
-    const clientId = '16c30af555714db1997a059eca365a3b';
-    const clientSecret = '03d021c3adee480197ef438852209ccf';
-    const redirectUri = 'https://musicnumbers-f4704.web.app/callback'; // Asegúrate de que coincida con la URL de redirección configurada en tu aplicación de Spotify
+    const clientId = '';
+    const clientSecret = '';
+    const redirectUri = 'http://localhost:4200/callback'; // Asegúrate de que coincida con la URL de redirección configurada en tu aplicación de Spotify
     //const redirectUri = 'http://localhost:4200/callback'; // Asegúrate de que coincida con la URL de redirección configurada en tu aplicación de Spotify
 
     const headers = new HttpHeaders({
